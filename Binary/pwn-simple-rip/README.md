@@ -1,4 +1,4 @@
-# pwn simple rip
+# Challenge 1: pwn simple rip
 
 ![Chal1](https://github.com/OceanTran999/CTFLearn/assets/100577019/0651b4ca-e025-44df-85a8-8a0113566268)
 
@@ -18,7 +18,7 @@ Finally, we just need the address of `win()` to get the flag.
 ![win1](https://github.com/OceanTran999/CTFLearn/assets/100577019/6088d154-f601-48fc-842b-b069b200a54a)
 
 
-# shell time
+# Challenge 2: shell time
 
 ![Chal2](https://github.com/OceanTran999/CTFLearn/assets/100577019/c540459e-7e73-49e9-b4fa-1e0d1c5a23f4)
 
