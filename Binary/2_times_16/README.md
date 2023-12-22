@@ -16,7 +16,7 @@ Here's file's protection
 ![print_flag](https://github.com/OceanTran999/CTFLearn/assets/100577019/fa9c4a2d-70c6-4c4e-891f-13cc64deb950)
 
 
-Next, I `disassemble vuln`
+We can see that if the variables `p1` and `p2` are equal to values that displayed in the code, we will get the flag. Next, I `disassemble vuln`
 
 ![disas_vuln](https://github.com/OceanTran999/CTFLearn/assets/100577019/6101194b-83b2-48a4-9173-0d0e0188fb7d)
 
