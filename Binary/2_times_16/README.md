@@ -17,12 +17,12 @@ Here's file's protection
 
 
 Next, I `disassemble vuln`
+
 ![disas_vuln](https://github.com/OceanTran999/CTFLearn/assets/100577019/6101194b-83b2-48a4-9173-0d0e0188fb7d)
 
 
-Looking at the Assembly code, I think the stack will look like:
-```44 bytes buffer + 4 bytes `ebp` + 4 bytes `print_flag()` + 4 bytes + 4 bytes `p1` + 4 bytes `p2````
-Next, we will need the address of `print_flag()`
+Looking at the Assembly code, I think the stack will look like: => 44 bytes buffer + 4 bytes `ebp` + 4 bytes `print_flag()` + 4 bytes + 4 bytes `p1` + 4 bytes `p2`
+Next, I need the address of `print_flag()`
 
 ![print_flag](https://github.com/OceanTran999/CTFLearn/assets/100577019/fa9c4a2d-70c6-4c4e-891f-13cc64deb950)
 
