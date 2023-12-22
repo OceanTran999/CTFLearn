@@ -60,7 +60,7 @@ I will have stack for this challenge.
 ![stack](https://github.com/OceanTran999/CTFLearn/assets/100577019/c03f2a7d-e26c-40e1-b7c8-a300444c097f)
 
 
-However, it works in local version, when I submit to server, I can't get the flag. Therefore I choose different address to jump to, which is `0x401216`. And I finally get the flag.
+However, it works in local version, when I submit to server, I can't get the flag. Therefore I choose different address to jump to, which is `0x40121B`. And I finally get the flag.
 
 ![IDA_Pro](https://github.com/OceanTran999/CTFLearn/assets/100577019/0e4f6b76-d69a-4e04-b95e-333a7e3a55c4)
 
