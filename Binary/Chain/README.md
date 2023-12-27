@@ -1,21 +1,33 @@
-![Challenge](https://github.com/OceanTran999/CTFLearn/assets/100577019/9cadfee0-39b8-4c8b-a238-a9fd342c948c)
+<p align="center">
+  <img src="![Challenge](https://github.com/OceanTran999/CTFLearn/assets/100577019/9cadfee0-39b8-4c8b-a238-a9fd342c948c)"/>
+</p>
 
-![source](https://github.com/OceanTran999/CTFLearn/assets/100577019/9803296f-b3ee-4ebd-9003-5248e37230fe)
+<p align="center">
+  <img src="![source](https://github.com/OceanTran999/CTFLearn/assets/100577019/9803296f-b3ee-4ebd-9003-5248e37230fe)"/>
+</p>
 
-![Protection](https://github.com/OceanTran999/CTFLearn/assets/100577019/33ca6ff5-f9f2-4ad9-92cf-97d9ef6acb80)
+<p align="center">
+  <img src="![Protection](https://github.com/OceanTran999/CTFLearn/assets/100577019/33ca6ff5-f9f2-4ad9-92cf-97d9ef6acb80)"/>
+</p>
 
 
 In this challenge, we can see that the NX is enabled, means that we can't execute in the stack. Also, the challenge does not provide the `shell()` or `system()` to help us jump to obtain the shell. Therefore, we have to find a way to get it, and I will use Return Oriented Programming (ROP) to solve this.
 First, we need to find the offset, I'll use `pattern_create` and `pattern_offset` of Metasploit to calculate offset.
 
-![pattern_create](https://github.com/OceanTran999/CTFLearn/assets/100577019/88e9ff8f-faa1-4660-94c4-565b7d818d5f)
+<p align="center">
+  <img src="![pattern_create](https://github.com/OceanTran999/CTFLearn/assets/100577019/88e9ff8f-faa1-4660-94c4-565b7d818d5f)"/>
+</p>
 
-![disas_ask](https://github.com/OceanTran999/CTFLearn/assets/100577019/b7e23ae9-0d16-4664-a08f-98bda4020a50)
+<p align="center">
+  <img src="![disas_ask](https://github.com/OceanTran999/CTFLearn/assets/100577019/b7e23ae9-0d16-4664-a08f-98bda4020a50)"/>
+</p>
 
 
 We can see, in top of the stack will have the value `Aa8A`, I will calculate it to know the offset.
 
-![pattern_offset](https://github.com/OceanTran999/CTFLearn/assets/100577019/6f09d1b6-b9ab-4725-80dc-f03c02ed06ce)
+<p align="center">
+  <img src="![pattern_offset](https://github.com/OceanTran999/CTFLearn/assets/100577019/6f09d1b6-b9ab-4725-80dc-f03c02ed06ce)"/>
+</p>
 
 
 Great!!! We know the offset. Now, what's next? Before we continue, we have to know what's ROP first.
@@ -24,22 +36,30 @@ Great!!! We know the offset. Now, what's next? Before we continue, we have to kn
 
 Assuming that we have the address of gadget `pop rdi;ret;` is `0xabcdef` and we have a stack look like
 
-![stack1](https://github.com/OceanTran999/CTFLearn/assets/100577019/a3f5f872-50d3-41db-8d9e-923f697434b3)
+<p align="center">
+  <img src="![stack1](https://github.com/OceanTran999/CTFLearn/assets/100577019/a3f5f872-50d3-41db-8d9e-923f697434b3)"/>
+</p>
 
 
 To let the program run the gadget, we need to make the return address point to the address of this gadget.
 
-![stack2](https://github.com/OceanTran999/CTFLearn/assets/100577019/3061a462-5221-434d-9b3d-3842e67fb998)
+<p align="center">
+  <img src="![stack2](https://github.com/OceanTran999/CTFLearn/assets/100577019/3061a462-5221-434d-9b3d-3842e67fb998)"/>
+</p>
 
 
 When the `ask()` is done, the `$rsp` keeps going up (-4 or -8 bytes) to execute each code in gadget, for example the `pop rdi` means that it will save `AAAA` value to the `rdi` register.
 
-![stack3](https://github.com/OceanTran999/CTFLearn/assets/100577019/ffa57d85-37c0-45f0-886d-8cdd2e7fb81f)
+<p align="center">
+  <img src="![stack3](https://github.com/OceanTran999/CTFLearn/assets/100577019/ffa57d85-37c0-45f0-886d-8cdd2e7fb81f)"/>
+</p>
 
 
 Finally, it will call `main()` thanks to `ret` instruction.
 
-![stack4](https://github.com/OceanTran999/CTFLearn/assets/100577019/dd5354ee-04bb-492e-95d2-c8a6a269819e)
+<p align="center">
+  <img src="![stack4](https://github.com/OceanTran999/CTFLearn/assets/100577019/dd5354ee-04bb-492e-95d2-c8a6a269819e)"/>
+</p>
 
 
 Ok. Now let's started! I will find the address of gadget and hope I will find the simplest one. I will use [ROPgadget](https://github.com/JonathanSalwan/ROPgadget) tool.
@@ -62,13 +82,16 @@ Here's my payload look likes:
 - main(): exploit the vulnerable program again
 
 We need to find at least 2 address for recognizing the libc version, I will use the address of `read()` and `puts()` in this challenge.
-
-![leak](https://github.com/OceanTran999/CTFLearn/assets/100577019/ad75cde5-a15a-4b12-9151-1a5dd183ebda)
+<p align="center">
+  <img src="![leak](https://github.com/OceanTran999/CTFLearn/assets/100577019/ad75cde5-a15a-4b12-9151-1a5dd183ebda)"/>
+</p>
 
 
 Yummy!!! Now I will use this address to find the libc version in https://libc.blukat.me/.
 
-![libc_version](https://github.com/OceanTran999/CTFLearn/assets/100577019/cdaa763e-d7f1-4462-9d86-3fe74a2eddfe)
+<p align="center">
+  <img src="![libc_version](https://github.com/OceanTran999/CTFLearn/assets/100577019/cdaa763e-d7f1-4462-9d86-3fe74a2eddfe)"/>
+</p>
 
 
 Since we know the libc address, we will easily calculate the address of `system()` and `/bin/sh` string to call `system("/bin/sh")` in order to gain the shell and get the flag.
