@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="![Challenge](https://github.com/OceanTran999/CTFLearn/assets/100577019/9cadfee0-39b8-4c8b-a238-a9fd342c948c)"/>
+  <img src="![Challenge](https://github.com/OceanTran999/CTFLearn/assets/100577019/9cadfee0-39b8-4c8b-a238-a9fd342c948c)">
 </p>
 
 <p align="center">
