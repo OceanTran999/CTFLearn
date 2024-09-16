@@ -6,7 +6,7 @@ This challenge is very good that it takes more than an hour for me to learn new 
 Let's analysis the program:
 - The `login` using `malloc()` to create a user with a pointer called `curr` and save the its data on the heap.
 - The `sign_out` will `free()` the user's data on the heap. However, it does not reset all the user's data.
-- `print_flag` will will gives you the real flag check if you are **admin(admin != 0)**, otherwise it will gives the `fake_flag`.
+- `print_flag` will give you the real flag if you are **admin(admin != 0)**, otherwise it will gives the `fake_flag`.
 - `Lock_user` will backup the pointer `curr` with another pointer called `save`.
 - `Restore_user` will use the backup pointer `save` to the `curr` and change the value `save` to **NULL**.
 
