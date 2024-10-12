@@ -1,0 +1,2 @@
+- In this challenge, we have a buffer overflow vulnerability in line 31, and the program only check the first 5 byte of `src` variable.
+- The most special thing I see that we can also leak the from first to 7th byte of canary's value because the `strncpy()` only copy 9 bytes of `src` to `dest`. So we just add `00` at the end of canary's value and use the given leaked flag address to the `$RIP` and we will get the flag!
