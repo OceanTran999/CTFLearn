@@ -32,3 +32,10 @@ The `group_concat()` concatenates the results into a string `information_schema`
 Welp, I see the `w0w_y0u_f0und_m3` database can possibly contains the flag, so I will extract it and get the flag XD
 
 ![flag](https://github.com/user-attachments/assets/83bdc5eb-1628-4511-84ad-a7d63f3d0a7a)
+
+# References:
+- https://www.acunetix.com/blog/articles/exploiting-sql-injection-example/
+- https://portswigger.net/web-security/sql-injection/union-attacks
+- https://www.sqlinjection.net/union/
+- https://www.w3schools.com/sql/sql_orderby.asp
+- https://www.w3schools.com/sql/sql_union.asp
