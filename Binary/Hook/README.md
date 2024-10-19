@@ -48,3 +48,7 @@ And yeah, I finally did it. So we just overwrite this address with `system()`, a
 
 
 ![Flag](https://github.com/user-attachments/assets/9ff09287-5244-49ef-8f34-427c1f3d803d)
+
+# References:
+- https://blog.quarkslab.com/heap-exploitation-glibc-internals-and-nifty-tricks.html
+- https://adamgold.github.io/posts/basic-heap-exploitation-house-of-force/
